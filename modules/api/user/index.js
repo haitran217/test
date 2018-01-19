@@ -4,7 +4,7 @@ const Router = express.Router();
 
 const userController = require('./userController')
 
-Router.post('/', (req, res) => {
+Router.post('/signup', (req, res) => {
 
   var userInfo = {
     username: req.body.username,
