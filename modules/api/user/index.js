@@ -4,15 +4,15 @@ const Router = express.Router();
 
 const userController = require('./userController')
 
-Router.post('/use', (req, res) => {
+Router.post('/', (req, res) => {
 
   var userInfo = {
-    username: req.query.username,
-    pass: req.query.pass,
-    email: req.query.email
+    username: req.body.username,
+    pass: req.body.pass,
+    email: req.body.email
   }
 
-  console.log('post data ', userInfo);
+  console.log('post data ', req.body);
 
 
   userController.createUser(userInfo, (err, doc) => {
