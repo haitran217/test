@@ -25,4 +25,15 @@ Router.post('/signup', (req, res) => {
   });
 });
 
+Router.post('/signin',(req,res)=>{
+  userController.signIn({username : req.body.username, pass : req.body.pass}, (err, doc) => {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.send("dang nhao thanh cong")
+    }
+  });
+});
+
 module.exports = Router;
